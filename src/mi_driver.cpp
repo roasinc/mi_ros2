@@ -45,9 +45,6 @@ MiDriver::MiDriver(const std::string& node)
 
   serial_ = std::make_shared<serial::Serial>();
   parser_ = std::make_shared<Parser>(rpy_, imu_, tf_ned_to_enu_);
-
-  reset_ = this->create_service<std_srvs::srv::Trigger>(
-      "imu/reset", std::bind(&MiDriver::reset, this, std::placeholders::_1, std::placeholders::_2));
 }
 
 MiDriver::~MiDriver()
@@ -63,7 +60,8 @@ bool MiDriver::init()
     return false;
   }
 
-  // srv_reset_ = nh_.advertiseService("reset", &MiDriver::reset, this);
+  srv_reset_ = this->create_service<std_srvs::srv::Trigger>(
+      "imu/reset", std::bind(&MiDriver::reset, this, std::placeholders::_1, std::placeholders::_2));
 
   pub_rpy_ = this->create_publisher<geometry_msgs::msg::Vector3Stamped>("imu/rpy", 1);
   rp_rpy_ = std::make_shared<realtime_tools::RealtimePublisher<geometry_msgs::msg::Vector3Stamped>>(pub_rpy_);

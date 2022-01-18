@@ -87,7 +87,7 @@ private:
   std::shared_ptr<realtime_tools::RealtimePublisher<geometry_msgs::msg::Vector3Stamped>> rp_rpy_;
   std::shared_ptr<realtime_tools::RealtimePublisher<sensor_msgs::msg::Imu>> rp_imu_;
 
-  rclcpp::Service<std_srvs::srv::Trigger>::SharedPtr reset_;
+  rclcpp::Service<std_srvs::srv::Trigger>::SharedPtr srv_reset_;
 
   geometry_msgs::msg::Vector3Stamped rpy_;
   sensor_msgs::msg::Imu imu_;

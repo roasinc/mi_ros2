@@ -7,7 +7,7 @@
     This packages provices the driver for MICROINFINITY XG6000 IMU sensor.
   </description>
   <maintainer email="shlee@roas.co.kr">Brighten Lee</maintainer>
-  <license>BSD</license>
+  <license>Apache License 2.0</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
