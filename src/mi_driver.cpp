@@ -120,6 +120,7 @@ void MiDriver::reset(const std::shared_ptr<std_srvs::srv::Trigger::Request> req,
   stringstream msg;
   msg << RESET << "\r";
   serial_->write(msg.str());
+  resp->success = "true";
 }
 
 void MiDriver::publishData()
