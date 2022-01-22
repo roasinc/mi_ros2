@@ -2,9 +2,9 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>mi_ros2</name>
-  <version>0.1.0</version>
+  <version>0.1.1</version>
   <description>
-    This packages provices the driver for MICROINFINITY XG6000 IMU sensor.
+    The driver package for MICROINFINITY XG6000 IMU sensor.
   </description>
   <maintainer email="shlee@roas.co.kr">Brighten Lee</maintainer>
   <license>Apache License 2.0</license>

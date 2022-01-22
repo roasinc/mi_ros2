@@ -41,6 +41,7 @@ THE POSSIBILITY OF SUCH DAMAGE.
 #include "geometry_msgs/msg/vector3_stamped.hpp"
 #include "sensor_msgs/msg/imu.hpp"
 #include "std_srvs/srv/trigger.hpp"
+
 #include "mi_ros2/parser.hpp"
 
 class MiDriver : public rclcpp::Node
@@ -65,7 +66,7 @@ public:
    * \param req Request
    * \param resp Response
    */
-  void reset(const std::shared_ptr<std_srvs::srv::Trigger::Request> req,
+  void reset(const std::shared_ptr<std_srvs::srv::Trigger::Request>,
              std::shared_ptr<std_srvs::srv::Trigger::Response> resp);
 
   /**

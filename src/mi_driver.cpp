@@ -70,6 +70,9 @@ bool MiDriver::init()
   pub_imu_ = this->create_publisher<sensor_msgs::msg::Imu>("imu/data", 1);
   rp_imu_ = std::make_shared<realtime_tools::RealtimePublisher<sensor_msgs::msg::Imu>>(pub_imu_);
   rp_imu_->msg_.header.frame_id = frame_id_;
+  rp_imu_->msg_.orientation_covariance = { 0.01, 0.0, 0.0, 0.0, 0.01, 0.0, 0.0, 0.0, 0.01 };
+  rp_imu_->msg_.angular_velocity_covariance = { 0.01, 0.0, 0.0, 0.0, 0.01, 0.0, 0.0, 0.0, 0.01 };
+  rp_imu_->msg_.linear_acceleration_covariance = { 0.01, 0.0, 0.0, 0.0, 0.01, 0.0, 0.0, 0.0, 0.01 };
 
   // Initial setting for serial communication
   serial_->setPort(port_);
@@ -114,13 +117,13 @@ void MiDriver::read()
   }
 }
 
-void MiDriver::reset(const std::shared_ptr<std_srvs::srv::Trigger::Request> req,
+void MiDriver::reset(const std::shared_ptr<std_srvs::srv::Trigger::Request>,
                      std::shared_ptr<std_srvs::srv::Trigger::Response> resp)
 {
   stringstream msg;
   msg << RESET << "\r";
   serial_->write(msg.str());
-  resp->success = "true";
+  resp->success = true;
 }
 
 void MiDriver::publishData()

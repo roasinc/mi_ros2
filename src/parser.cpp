@@ -138,7 +138,7 @@ void Parser::convert(const uint8_t* data)
       (static_cast<int16_t>((static_cast<uint8_t>(data[17]) << 8) | static_cast<uint8_t>(data[16]))) / 1000.0 * 9.80665;
 
   tf2::Quaternion quat;
-  quat.setEuler(euler_r, euler_p, euler_y);
+  quat.setRPY(euler_r, euler_p, euler_y);
 
   if (tf_ned_to_enu_)
   {
