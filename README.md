@@ -14,9 +14,9 @@ ROS2 Interface
 | ``imu/data`` | ``sensor_msgs/Imu``              | IMU values              |
 | ``imu/rpy``  | ``geometry_msgs/Vector3Stamped`` | Roll. Pitch, Yaw values |
 
-| Service Name  | Type             | Description      |
-|---------------|------------------|------------------|
-| ``imu/reset`` | ``mi_ros/Reset`` | Reset the sensor |
+| Service Name  | Type                 | Description      |
+|---------------|----------------------|------------------|
+| ``imu/reset`` | ``std_srvs/Trigger`` | Reset the sensor |
 
 Installation
 ------------
