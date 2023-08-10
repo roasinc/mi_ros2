@@ -1,5 +1,6 @@
+# This repository will not be maintained further.
+
 # mi_ros2
-**This repository will not be maintained further.**
 
 ## Overview
 ROS2 driver for XG6000 IMU sensor
