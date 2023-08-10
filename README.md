@@ -1,10 +1,8 @@
-MICROINFINITY XG6000 ROS2 Driver
-===============================
+# mi_ros2
+**This repository will not be maintained further.**
 
-Overview
---------
-
-ROS2 driver for XG6000 IMU sensor.
+## Overview
+ROS2 driver for XG6000 IMU sensor
 
 ROS2 Interface
 -----------
@@ -25,17 +23,8 @@ Installation
 cd ~/catkin_ws/src/
 git clone https://github.com/wjwwood/serial.git -b ros2
 git clone https://github.com/roasinc/mi_ros2.git
+
 cd ~/catkn_ws/
 rosdep install --from-paths src --ignore-src -y
 catkin_make
-```
-
-Udev Setup
-----------
-
-```
-roscd mi_ros2/rulse/
-sudo cp 41-mi.rules /etc/udev/rules.d/
-sudo udevadm control --reload-rules
-sudo udevadm trigger
 ```
